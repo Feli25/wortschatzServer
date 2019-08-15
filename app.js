@@ -21,13 +21,13 @@ const mongoose = require('mongoose')
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(cookieParser())
 
-app.use(session({
-  secret: process.env.SESSION_SECRET || 'irongenerator',
-  resave: true,
-  saveUninitialized: true,
-  store: new MongoStore({ mongooseConnection: mongoose.connection })
-}))
-require('./passport')(app)
+// app.use(session({
+//   secret: process.env.SESSION_SECRET || 'irongenerator',
+//   resave: true,
+//   saveUninitialized: true,
+//   store: new MongoStore({ mongooseConnection: mongoose.connection })
+// }))
+// require('./passport')(app)
 
 app.use('/word', require('./routes/word'))
 app.use('/story', require('./routes/story'))
